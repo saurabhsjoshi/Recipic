@@ -1,0 +1,13 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,500|Dancing+Script|Vollkorn';
+
+@mixin cursive {
+	font-family: 'Dancing Script', cursive;
+}
+
+@mixin serif {
+	font-family: 'Vollkorn', serif;
+}
+
+@mixin sans-serif {
+	font-family: 'Roboto', sans-serif;
+}

@@ -1,0 +1,258 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,500|Dancing+Script|Vollkorn';
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+html {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+q, blockquote {
+	quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+	content: "";
+	content: none;
+}
+
+a img {
+	border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+	display: block;
+}
+
+nav {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	background: #5D4037;
+	background: linear-gradient(#5D4037, #795548);
+	width: 100vw;
+	padding: 1% 0 0 0;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+	width: 100%;
+	margin: 1% auto 0 auto;
+	text-align: center;
+}
+
+nav ul > li {
+	font-family: 'Roboto', sans-serif;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	cursor: default;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	padding: 1.2% 3%;
+	background-color: transparent;
+	color: #FFFFFF;
+	display: inline-block;
+}
+
+nav ul > li:last-child {
+	margin-right: 0px;
+}
+
+nav ul > li:hover {
+	background-color: #212121;
+	cursor: pointer;
+}
+
+nav ul > li.active {
+	background-color: #8BC34A;
+	color: #212121;
+}
+
+nav ul > li.active:hover {
+	background-color: #212121;
+	color: #8BC34A;
+}
+
+nav ul > li.negative {
+	background-color: #000;
+	color: #FFFFFF;
+}
+
+nav ul > li.negative:hover {
+	background-color: #212121;
+	color: #8BC34A;
+}
+
+nav .logo {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	cursor: default;
+	font-family: 'Dancing Script', cursive;
+	cursor: pointer;
+	font-size: 3em;
+	text-align: center;
+	display: block;
+	vertical-align: middle;
+}
+
+.content {
+	margin: 0 auto;
+	padding-top: 2%;
+	z-index: 1;
+	width: 80%;
+}
+
+.card {
+	border-radius: 3px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	display: inline-block;
+	margin: 1%;
+	height: auto;
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	min-width: 10em;
+	max-width: 15em;
+	position: relative;
+}
+
+.card img {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	cursor: default;
+	cursor: pointer;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	overflow: none;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.card span {
+	font-family: 'Roboto', sans-serif;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	cursor: default;
+	cursor: pointer !important;
+	display: block;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.85);
+	color: #212121;
+	font-weight: 400;
+	font-size: 1.12em;
+	bottom: 1.6em;
+	line-height: 1.6;
+	padding: 0 1em;
+	visibility: visible;
+	transition: all 300ms;
+}
+
+.card:hover {
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card:hover span {
+	box-shadow: none;
+	background-color: rgba(0, 0, 0, 0.75);
+	color: #FFF;
+	padding: 0 0.5em;
+}
+
+.card:active {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	cursor: default;
+	cursor: pointer !important;
+	box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+}
+
+.card:active span {
+	filter: opacity(0%);
+}
+
+body {
+	background-color: #FAFAFA;
+	color: #212121;
+}
+
+h1, h2, h3 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	color: #FFFFFF;
+}
+
+.overlay {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	display: block;
+	z-index: 10;
+}
+
+.overlay .card {
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	border-radius: 5px;
+	margin: 0 auto;
+	width: 45%;
+	padding: 0;
+}
+
+.overlay .card .header {
+	top: 0;
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.overlay .card .header img {
+	width: 100%;
+	height: auto;
+}
