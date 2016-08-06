@@ -47,6 +47,30 @@ function signUpUser($username, $password, $email, $name) {
 	}
 }
 
+function checkIfUserExists($username, $email) {
+	try {
+		global $db_connection_handle;
+		$user_array = array(
+			':username' => $username,
+			':email' => $email);
+		$sql = 'SELECT COUNT(*) AS count FROM users WHERE username=:username OR email=:email';
+		$st = $db_connection_handle->prepare($sql);
+		$st->execute($user_array);
+		$result = $st->fetch(PDO::FETCH_ASSOC);
+		if($result['count'] > 0){
+			debug_to_console("Found user");
+			return TRUE;
+		} else {
+			debug_to_console("User not found");
+			return FALSE;
+		}
+
+	} catch (Exception $e) {
+		debug_to_console('Select ERROR: ' . $e->getMessage()."\n");
+		return FALSE;
+	}
+}
+
 function signInUser($username, $password) {
 	try{
 		global $db_connection_handle;
