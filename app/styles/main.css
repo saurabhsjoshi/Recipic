@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto:400,500|Dancing+Script|Vollkorn';
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500|Dancing+Script|Vollkorn';
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -255,4 +255,20 @@ h1, h2, h3 {
 .overlay .card .header img {
 	width: 100%;
 	height: auto;
+}
+
+.login {
+	border-radius: 3px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	display: inline-block;
+	margin: 0 auto;
+	height: auto;
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	padding: 3em 2em 2em 2em;
+	box-sizing: border-box;
+	background-color: #FFF;
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
