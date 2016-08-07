@@ -263,12 +263,85 @@ h1, h2, h3 {
 	display: inline-block;
 	margin: 0 auto;
 	height: auto;
-	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 	padding: 3em 2em 2em 2em;
 	box-sizing: border-box;
 	background-color: #FFF;
 	position: absolute;
+	width: 30%;
 	top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.login label {
+	/* make label unselectable */
+	user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 1.2em;
+	line-height: 1.2;
+	margin: 0 0.4em;
+	padding: 0 0.1em;
+}
+
+.login input {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	display: block;
+	margin: 0.8em 0.4em;
+	padding: 0 0.1em;
+	line-height: 1.6;
+}
+
+.login input[type="text"], .login input[type="password"] {
+	color: #212121;
+	border-left-width: 0;
+	border-right-width: 0;
+	border-top-width: 0;
+	border-bottom-width: 2px;
+	width: 100%;
+	transition: all 350ms;
+}
+
+.login input[type="text"]:hover, .login input[type="password"]:hover {
+	border-bottom-color: #212121;
+}
+
+.login input[type="text"]:focus, .login input[type="password"]:focus {
+	border-bottom-color: #795548;
+	outline: 0;
+}
+
+.login input[type="submit"] {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	color: #FFF;
+	font-size: 1.12em;
+	line-height: 1.4;
+	border-radius: 3px;
+	width: 100%;
+	padding: 1em 0;
+	border: 0;
+	transition: box-shadow 300ms;
+	background: #5D4037;
+	background: -webkit-linear-gradient(#5D4037, #795548);
+	background: -o-linear-gradient(#5D4037, #795548);
+	background: linear-gradient(#5D4037, #795548);
+}
+.login input[type="submit"]:hover {
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	background: -webkit-linear-gradient(#5D4037, #795548);
+	background: -o-linear-gradient(#5D4037, #795548);
+	background: linear-gradient(#5D4037, #795548);
+}
+
+.login input[type="submit"]:active {
+	box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+}
+
+.login input[type="submit"]:focus {
+	outline: 0;
 }
