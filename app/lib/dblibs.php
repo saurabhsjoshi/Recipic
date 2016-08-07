@@ -96,6 +96,10 @@ function signInUser($username, $password) {
 	}
 }
 
+function getRecipesFromId($id) {
+	
+}
+
 function debug_to_console( $data ) {
 	global $DEBUG_MODE;
 	if(!$DEBUG_MODE)
@@ -106,7 +110,5 @@ function debug_to_console( $data ) {
 		$output = "<script>console.log( 'Debug Objects: " . $data . "' );</script>";
 	echo $output;
 }
-
-
 
 ?>
