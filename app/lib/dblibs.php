@@ -40,6 +40,8 @@ function signUpUser($username, $password, $email, $name) {
 		$sql = 'INSERT INTO users (username, password, email, name, status) VALUES (:username, :password, :email, :name, :status)';
 		$st = $db_connection_handle->prepare($sql);
 		$st->execute($user_array);
+		$uid = $db_connection_handle->lastInsertId();
+		startSession($uid, $username, $name);
 		return TRUE;
 	} catch(PDOException $e){
 		debug_to_console ('Insert ERROR: '.$e->getMessage()."\n");
@@ -47,13 +49,34 @@ function signUpUser($username, $password, $email, $name) {
 	}
 }
 
-function checkIfUserExists($username, $email) {
+function checkIfUsernameExists($username) {
 	try {
 		global $db_connection_handle;
 		$user_array = array(
-			':username' => $username,
+			':username' => $username);
+		$sql = 'SELECT COUNT(*) AS count FROM users WHERE username=:username';
+		$st = $db_connection_handle->prepare($sql);
+		$st->execute($user_array);
+		$result = $st->fetch(PDO::FETCH_ASSOC);
+		if($result['count'] > 0){
+			debug_to_console("Found user");
+			return TRUE;
+		} else {
+			debug_to_console("User not found");
+			return FALSE;
+		}
+	} catch (Exception $e) {
+		debug_to_console('Select ERROR: ' . $e->getMessage()."\n");
+		return FALSE;
+	}
+}
+
+function checkIfEmailExists($email) {
+	try {
+		global $db_connection_handle;
+		$user_array = array(
 			':email' => $email);
-		$sql = 'SELECT COUNT(*) AS count FROM users WHERE username=:username OR email=:email';
+		$sql = 'SELECT COUNT(*) AS count FROM users WHERE email=:email';
 		$st = $db_connection_handle->prepare($sql);
 		$st->execute($user_array);
 		$result = $st->fetch(PDO::FETCH_ASSOC);
@@ -171,7 +194,7 @@ function saveRecipe($title, $content, $uid) {
 }
 
 function updateRecipe($title, $content, $uid) {
-
+	
 }
 
 function debug_to_console( $data ) {
