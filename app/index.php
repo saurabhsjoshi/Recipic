@@ -24,7 +24,18 @@ $LOGGED_IN = isInSession();
 
   </head>
   <body>
-
+    <div class="overlay">
+      <div class="login">
+        <h2>Recipic</h2>
+        <form method="post" action="login.php">
+          <input type="text" name="name" value="" autocomplete="name" placeholder="Full Name" required>
+          <input type="username" name="username" autocomplete="username" placeholder="Username" required>
+          <input type="email" name="email" autocomplete="email" placeholder="Email" required>
+          <input type="password" name="password" autocomplete="off" placeholder="Password" required>
+          <input type="submit" value="Log In">
+        </form>
+      </div>
+    </div>
     <div class="container">
 		<nav>
 			<h1 class="logo">Recipic</h1>
@@ -43,7 +54,7 @@ ZZEOF;
                 ?>
 			</ul>
 		</nav>
-		<!-- <div class="content">
+		<div class="content">
             <div class="card"><img src="http://mikes-table.themulligans.org/wp-content/uploads/2009/01/potato_ricotta_gnocchi-7.jpg" alt="Potato Ricotta Gnocchi"><span>Potato Ricotta Gnocchi</span></div>
             <div class="card"><img src="https://sophnstuff.files.wordpress.com/2013/01/dsc_0086-copy1.jpg" alt="Tomato Ravioli"><span>Tomato Ravioli</span></div>
             <div class="card"><img src="http://www.ingredientsnetwork.com/47/pdcnewsitem/03/77/22/3.jpg" alt="Rotini"><span>Rotini Pasta</span></div>
@@ -64,20 +75,7 @@ ZZEOF;
             <div class="card"><img src="https://sophnstuff.files.wordpress.com/2013/01/dsc_0086-copy1.jpg" alt="Tomato Ravioli"><span>Tomato Ravioli</span></div>
             <div class="card"><img src="http://www.ingredientsnetwork.com/47/pdcnewsitem/03/77/22/3.jpg" alt="Rotini"><span>Rotini Pasta</span></div>
             <div class="card"><img src="http://viafratelli.com/wp-content/uploads/2015/02/crabmeat-pasta.jpg" alt="Crabmeat Spaghetti"><span>Crabmeat Spaghetti</span></div>
-		</div> -->
-
-    <div class="content">
-      <div class="login">
-        <h2>Recipic</h2>
-        <form method="post" action="login.php">
-          <label>Username<br />
-          <input type="text" name="username" autocomplete="username" autofocus="true" required></label><br />
-          <label>Password<br />
-          <input type="password" name="password" autocomplete="off" required></label>
-          <input type="submit" value="Log In">
-        </form>
-      </div>
-    </div>
+		</div>
 	</div>
 
     <!-- build:js scripts/vendor.js -->
