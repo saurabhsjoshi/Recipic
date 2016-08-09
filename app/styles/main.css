@@ -287,26 +287,11 @@ h1, h2, h3 {
 	margin-bottom: 1em;
 }
 
-.login label {
-	/* make label unselectable */
-	user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  cursor: default;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 1.12em;
-	line-height: 1.4;
-	margin: 0 0.4em;
-	padding: 0 0.1em;
-}
-
 .login input {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	display: block;
-	margin: 0.8em 0.4em;
+	margin: 1.2em 0.4em;
 	padding: 0 0.1em;
 	line-height: 1.6;
 }

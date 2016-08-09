@@ -31,7 +31,7 @@ $LOGGED_IN = isInSession();
           <input type="text" name="name" value="" autocomplete="name" placeholder="Full Name" required>
           <input type="username" name="username" autocomplete="username" placeholder="Username" required>
           <input type="email" name="email" autocomplete="email" placeholder="Email" required>
-          <input type="password" name="password" autocomplete="off" placeholder="Password" required>
+          <input type="password" name="password" autocomplete placeholder="Password" required>
           <input type="submit" value="Log In">
         </form>
       </div>
