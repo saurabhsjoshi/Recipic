@@ -70,9 +70,9 @@ ZZEOF;
       <div class="login">
         <form method="post" action="login.php">
           <label>Username<br />
-          <input type="text" name="uname" autocomplete="username" autofocus="true" required></label><br />
+          <input type="text" name="username" autocomplete="username" autofocus="true" required></label><br />
           <label>Password<br />
-          <input type="password" name="pwd" autocomplete="off" required></label>
+          <input type="password" name="password" autocomplete="off" required></label>
           <input type="submit" value="Log In">
         </form>
       </div>

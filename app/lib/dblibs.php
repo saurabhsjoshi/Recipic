@@ -11,7 +11,6 @@ function connectToDb() {
 		global $DBUSER, $DBPASS, $DBNAME, $db_connection_handle;
 		$db_connection_handle = 
 		new PDO("mysql:host=127.0.0.1;dbname=$DBNAME", $DBUSER, $DBPASS);
-
 		$db_connection_handle->
 		setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$db_connection_handle->setAttribute(PDO::ATTR_CASE, PDO::CASE_LOWER);
@@ -98,6 +97,18 @@ function signInUser($username, $password) {
 
 function getRecipesFromId($id) {
 	
+}
+
+function getRecipesById($id) {
+
+}
+
+function saveRecipe($title, $content, $uid) {
+
+}
+
+function updateRecipe($title, $content, $uid) {
+
 }
 
 function debug_to_console( $data ) {
