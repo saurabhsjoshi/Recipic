@@ -230,8 +230,9 @@ h1, h2, h3 {
 }
 
 .overlay {
-	width: 100vw;
-	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.85);
+	width: 100%;
+	height: 100%;
 	position: fixed;
 	display: block;
 	z-index: 10;
@@ -268,9 +269,9 @@ h1, h2, h3 {
 	background-color: #FFF;
 	position: absolute;
 	width: 30%;
-	top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .login h2 {
@@ -310,7 +311,7 @@ h1, h2, h3 {
 	line-height: 1.6;
 }
 
-.login input[type="text"], .login input[type="password"] {
+.login input {
 	font-size: 1.14em;
 	color: #212121;
 	border-left-width: 0;
@@ -321,11 +322,11 @@ h1, h2, h3 {
 	transition: all 350ms;
 }
 
-.login input[type="text"]:hover, .login input[type="password"]:hover {
+.login input:hover {
 	border-bottom-color: #212121;
 }
 
-.login input[type="text"]:focus, .login input[type="password"]:focus {
+.login input:focus {
 	border-bottom-color: #795548;
 	outline: 0;
 }
