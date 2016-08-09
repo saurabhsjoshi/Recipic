@@ -297,7 +297,7 @@ h1, h2, h3 {
 }
 
 .login input {
-	font-size: 1.14em;
+	font-size: 1.2em;
 	color: #212121;
 	border-left-width: 0;
 	border-right-width: 0;
@@ -308,7 +308,7 @@ h1, h2, h3 {
 }
 
 .login input:hover {
-	border-bottom-color: #212121;
+	border-bottom-color: #777;
 }
 
 .login input:focus {
@@ -319,7 +319,7 @@ h1, h2, h3 {
 .login input[type="submit"] {
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 	color: #FFF;
-	font-size: 1.14em;
+	font-size: 1.2em;
 	line-height: 1.4;
 	border-radius: 3px;
 	width: 100%;
@@ -342,4 +342,21 @@ h1, h2, h3 {
 
 .login input[type="submit"]:focus {
 	outline: 0;
+}
+
+.login input.hiddenLoginInput {
+	display: none;
+}
+
+.login .prompt{
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	display: block;
+	width: 100%;
+	font-size: 1.1em;
+}
+
+.login .prompt .text-link {
+	color: #795548;
+	cursor: pointer;
 }

@@ -28,12 +28,15 @@ $LOGGED_IN = isInSession();
       <div class="login">
         <h2>Recipic</h2>
         <form method="post" action="login.php">
-          <input type="text" name="name" value="" autocomplete="name" placeholder="Full Name" required>
-          <input type="username" name="username" autocomplete="username" placeholder="Username" required>
-          <input type="email" name="email" autocomplete="email" placeholder="Email" required>
-          <input type="password" name="password" autocomplete placeholder="Password" required>
-          <input type="submit" value="Log In">
+          <input type="text"     name="name"     autocomplete="name"             placeholder="Full Name" class="hiddenLoginInput">
+          <input type="username" name="username" autocomplete="username"         placeholder="Username"  required>
+          <input type="email"    name="email"    autocomplete="email"            placeholder="Email"     required>
+          <input type="password" name="password" autocomplete="current-password" placeholder="Password"  class="hiddenLoginInput">
+          <input type="submit"   value="Log In">
         </form>
+        <span class="prompt">
+          Need an account? <span class="text-link" onclick="showSignUpForm()">Sign up!</span>
+        </span>
       </div>
     </div>
     <div class="container">
