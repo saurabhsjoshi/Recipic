@@ -2,7 +2,8 @@
 require_once __DIR__.'/../config.php';
 require_once('lib.php');
 require_once('session.php');
-
+require_once('FluidXml.php');
+use function \FluidXml\fluidxml;
 $db_connection_handle = NULL;
 $DEBUG_MODE = FALSE;
 
@@ -96,15 +97,77 @@ function signInUser($username, $password) {
 }
 
 function getRecipesFromId($id) {
-	
+	try{
+		global $db_connection_handle;
+
+		$user_array = array(':id' => $id);
+		$sql = 'SELECT users.name, users.id AS uid, recipes.id, title, content, recipes.dateCreated, dateModified FROM recipes INNER JOIN users ON recipes.u_id = users.id WHERE recipes.id>=:id LIMIT 10';
+		$st = $db_connection_handle->prepare($sql);
+		$st->execute($user_array);
+		$recipes = fluidxml('Recipes');
+		while($result = $st->fetch(PDO::FETCH_ASSOC)){
+			$xcontent = fluidxml($result['content']);
+			$xcontent->add('Id', $result['id']);
+			$xcontent->add('Title', $result['title']);
+			$xcontent->add('Author', $result['name']);
+			$xcontent->add('AuthorID', $result['uid']);
+			$xcontent->add('Dates', true)
+			->add('DateCreated', $result['datecreated'])
+			->add('DateModified', $result['datemodified']);
+			$recipes->add($xcontent);
+		}
+		//print_r($result);
+		
+		return $recipes->xml();
+	} catch(PDOException $e){
+		debug_to_console ('Select ERROR: '.$e->getMessage()."\n");
+		return "";
+	}
 }
 
-function getRecipesById($id) {
+function getRecipeById($id) {
+	try{
+		global $db_connection_handle;
 
+		$user_array = array(':id' => $id);
+		$sql = 'SELECT users.name, users.id AS uid, recipes.id, title, content, recipes.dateCreated, dateModified FROM recipes INNER JOIN users ON recipes.u_id = users.id WHERE recipes.id=:id';
+		$st = $db_connection_handle->prepare($sql);
+		$st->execute($user_array);
+		$result = $st->fetch(PDO::FETCH_ASSOC);
+		//print_r($result);
+		$xcontent = fluidxml($result['content']);
+		$xcontent->add('Id', $result['id']);
+		$xcontent->add('Title', $result['title']);
+		$xcontent->add('Author', $result['name']);
+		$xcontent->add('AuthorID', $result['uid']);
+		$xcontent->add('Dates', true)
+				->add('DateCreated', $result['datecreated'])
+				->add('DateModified', $result['datemodified']);
+
+		return $xcontent->xml();
+	} catch(PDOException $e){
+		debug_to_console ('Select ERROR: '.$e->getMessage()."\n");
+		return "";
+	}
 }
 
 function saveRecipe($title, $content, $uid) {
+	try{
+		global $db_connection_handle;
 
+		$user_array = array(
+			':title' => $title,
+			':content' => $content,
+			':u_id' => $uid);
+
+		$sql = 'INSERT INTO recipes (title, content, u_id, dateCreated) VALUES (:title, :content, :u_id, NOW())';
+		$st = $db_connection_handle->prepare($sql);
+		$st->execute($user_array);
+		return TRUE;
+	} catch(PDOException $e){
+		debug_to_console ('Insert ERROR: '.$e->getMessage()."\n");
+		return FALSE;
+	}
 }
 
 function updateRecipe($title, $content, $uid) {
