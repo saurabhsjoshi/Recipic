@@ -273,6 +273,19 @@ h1, h2, h3 {
   transform: translate(-50%, -50%);
 }
 
+.login h2 {
+	user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  cursor: default;
+	font-family: 'Dancing Script', cursive;
+	text-align: center;
+	font-size: 4em;
+	color: #795548;
+	margin-bottom: 1em;
+}
+
 .login label {
 	/* make label unselectable */
 	user-select: none;
@@ -282,8 +295,8 @@ h1, h2, h3 {
   cursor: default;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
-	font-size: 1.2em;
-	line-height: 1.2;
+	font-size: 1.12em;
+	line-height: 1.4;
 	margin: 0 0.4em;
 	padding: 0 0.1em;
 }
@@ -298,6 +311,7 @@ h1, h2, h3 {
 }
 
 .login input[type="text"], .login input[type="password"] {
+	font-size: 1.14em;
 	color: #212121;
 	border-left-width: 0;
 	border-right-width: 0;
@@ -319,7 +333,7 @@ h1, h2, h3 {
 .login input[type="submit"] {
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 	color: #FFF;
-	font-size: 1.12em;
+	font-size: 1.14em;
 	line-height: 1.4;
 	border-radius: 3px;
 	width: 100%;

@@ -68,6 +68,7 @@ ZZEOF;
 
     <div class="content">
       <div class="login">
+        <h2>Recipic</h2>
         <form method="post" action="login.php">
           <label>Username<br />
           <input type="text" name="username" autocomplete="username" autofocus="true" required></label><br />
