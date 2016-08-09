@@ -269,9 +269,9 @@ h1, h2, h3 {
 	background-color: #FFF;
 	position: absolute;
 	width: 30%;
-	top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .login h2 {
@@ -307,11 +307,11 @@ h1, h2, h3 {
 	transition: all 350ms;
 }
 
-.login input[type="text"]:hover, .login input[type="password"]:hover {
-	border-bottom-color: #212121;
+.login input:hover {
+	border-bottom-color: #777;
 }
 
-.login input[type="text"]:focus, .login input[type="password"]:focus {
+.login input:focus {
 	border-bottom-color: #795548;
 	outline: 0;
 }
