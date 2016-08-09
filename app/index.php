@@ -24,7 +24,19 @@ $LOGGED_IN = isInSession();
 
   </head>
   <body>
-
+    <div class="overlay">
+      <div class="login">
+        <h2>Recipic</h2>
+        <form method="post" action="login.php">
+          <input type="text"     name="name"     autocomplete="name"             placeholder="Full Name" class="hiddenLoginInput">
+          <input type="username" name="username" autocomplete="username"         placeholder="Username"  required autofocus="true">
+          <input type="email"    name="email"    autocomplete="email"            placeholder="Email"     required>
+          <input type="password" name="password" autocomplete="current-password" placeholder="Password"  class="hiddenLoginInput">
+          <input type="submit"   value="Log In">
+        </form>
+        <span class="prompt">Need an account? <span class="text-link">Sign Up</span>!</span>
+      </div>
+    </div>
     <div class="container">
 		<nav>
 			<h1 class="logo">Recipic</h1>
@@ -65,19 +77,6 @@ ZZEOF;
             <div class="card"><img src="http://www.ingredientsnetwork.com/47/pdcnewsitem/03/77/22/3.jpg" alt="Rotini"><span>Rotini Pasta</span></div>
             <div class="card"><img src="http://viafratelli.com/wp-content/uploads/2015/02/crabmeat-pasta.jpg" alt="Crabmeat Spaghetti"><span>Crabmeat Spaghetti</span></div>
 		</div> -->
-
-    <div class="content">
-      <div class="login">
-        <h2>Recipic</h2>
-        <form method="post" action="login.php">
-          <label>Username<br />
-          <input type="text" name="username" autocomplete="username" autofocus="true" required></label><br />
-          <label>Password<br />
-          <input type="password" name="password" autocomplete="off" required></label>
-          <input type="submit" value="Log In">
-        </form>
-      </div>
-    </div>
 	</div>
 
     <!-- build:js scripts/vendor.js -->
