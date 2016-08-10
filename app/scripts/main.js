@@ -36,7 +36,7 @@ $( document ).ready(function() {
                 console.log($(data).find('Message').text());
             } else if ($status = 200) {
                 //Signed up and logged in
-                window.location = "/app";
+                location.reload(true);
             }
         });
 
