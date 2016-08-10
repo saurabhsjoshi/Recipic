@@ -1,6 +1,15 @@
 $( document ).ready(function() {
     $('.overlay .login .prompt .text-link').click(function() {
-        $('.hiddenLoginInput').removeClass('display', 'block');
-        $('.overlay.login.prompt').html('Already have an account? <span class="text-link" onclick="showLogInForm()">Log In!</span>');
+        $('.hiddenLoginInput').toggle();
+        $('.overlay .login .prompt .login-prompt').toggle();
+        $('.overlay .login .prompt .signup-prompt').toggle();
     });
+
+    $('.negative').click(function() {
+      $('.overlay').toggle("slow");
+    });
+
+    // $('.overlay').click(function() {
+    //   $('.overlay').toggle("slow");
+    // });
 });

@@ -30,13 +30,18 @@ $LOGGED_IN = isInSession();
         <form method="post" action="login.php">
           <input type="text"     name="name"     autocomplete="name"             placeholder="Full Name" class="hiddenLoginInput">
           <input type="username" name="username" autocomplete="username"         placeholder="Username"  required>
-          <input type="email"    name="email"    autocomplete="email"            placeholder="Email"     required>
-          <input type="password" name="password" autocomplete="current-password" placeholder="Password"  class="hiddenLoginInput">
+          <input type="email"    name="email"    autocomplete="email"            placeholder="Email"     required class="hiddenLoginInput">
+          <input type="password" name="password" autocomplete="current-password" placeholder="Password"  required>
           <input type="submit"   value="Log In">
         </form>
-        <span class="prompt">
-          Need an account? <span class="text-link" onclick="showSignUpForm()">Sign up!</span>
+        <div class="prompt">
+        <span class="signup-prompt">
+          Need an account? <span class="text-link">Sign up!</span>
         </span>
+        <span class="login-prompt">
+          Already have an account? <span class="text-link">Log In!</span>
+        </span>
+      </div>
       </div>
     </div>
     <div class="container">
