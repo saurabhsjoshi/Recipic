@@ -59,8 +59,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 nav {
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-	background: #5D4037;
-	background: linear-gradient(#5D4037, #795548);
+	background: #E84A0C;
+	background: linear-gradient(#E84A0C, #8A0707);
 	width: 100vw;
 	padding: 1% 0 0 0;
 	position: sticky;
@@ -104,13 +104,13 @@ nav ul > li:hover {
 }
 
 nav ul > li.active {
-	background-color: #8BC34A;
+	background-color: #FFB000;
 	color: #212121;
 }
 
 nav ul > li.active:hover {
 	background-color: #212121;
-	color: #8BC34A;
+	color: #FFB000;
 }
 
 nav ul > li.negative {
@@ -120,7 +120,7 @@ nav ul > li.negative {
 
 nav ul > li.negative:hover {
 	background-color: #212121;
-	color: #8BC34A;
+	color: #FFB000;
 }
 
 nav .logo {
@@ -284,7 +284,7 @@ h1, h2, h3 {
 	font-family: 'Dancing Script', cursive;
 	text-align: center;
 	font-size: 4em;
-	color: #795548;
+	color: #E84A0C;
 	margin-bottom: 1em;
 }
 
@@ -313,7 +313,7 @@ h1, h2, h3 {
 }
 
 .login input:focus {
-	border-bottom-color: #795548;
+	border-bottom-color: #FFB000;
 	outline: 0;
 }
 
@@ -327,10 +327,10 @@ h1, h2, h3 {
 	padding: 1em 0;
 	border: 0;
 	transition: box-shadow 300ms;
-	background: #5D4037;
-	background: -webkit-linear-gradient(#5D4037, #795548);
-	background: -o-linear-gradient(#5D4037, #795548);
-	background: linear-gradient(#5D4037, #795548);
+	background: #E84A0C;
+	background: -webkit-linear-gradient(#E84A0C, #8A0707);
+	background: -o-linear-gradient(#E84A0C, #8A0707);
+	background: linear-gradient(#E84A0C, #8A0707);
 }
 .login input[type="submit"]:hover {
 	cursor: default;
@@ -358,7 +358,7 @@ h1, h2, h3 {
 }
 
 .login .prompt .text-link {
-	color: #795548;
+	color: #E84A0C;
 	cursor: pointer;
 }
 
