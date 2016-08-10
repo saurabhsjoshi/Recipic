@@ -27,7 +27,7 @@ $LOGGED_IN = isInSession();
     <div class="overlay">
       <div class="login">
         <h2>Recipic</h2>
-        <form method="post" action="login.php">
+        <form id="signUpForm" method="post" action="signup.php">
           <input type="text"     name="name"     autocomplete="name"             placeholder="Full Name" class="hiddenLoginInput">
           <input type="username" name="username" autocomplete="username"         placeholder="Username"  required>
           <input type="email"    name="email"    autocomplete="email"            placeholder="Email"     required class="hiddenLoginInput">

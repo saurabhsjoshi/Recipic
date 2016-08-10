@@ -2,7 +2,7 @@
 require_once('lib/dblibs.php');
 require_once('lib/FluidXml.php');
 use function \FluidXml\fluidxml;
-header('Content-Type: Application/xml');
+header('Content-Type: application/xml');
 
 $result = fluidxml("result");
 signUserUp();
