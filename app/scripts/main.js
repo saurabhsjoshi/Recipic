@@ -31,7 +31,7 @@ $( document ).ready(function() {
                 //Email already exists
                 console.log($(data).find('Message').text());
 
-            } else if ($status == 401){
+            } else if ($status == 401) {
                 //Username already exists
                 console.log($(data).find('Message').text());
             } else if ($status = 200) {
