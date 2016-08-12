@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!doctype html>
 <html lang="">
   <head>
@@ -43,25 +40,8 @@
       </div>
     </div>
     <div class="container">
-		<nav>
-			<h1 class="logo">Recipic</h1>
-			<ul>
-				<li class="active">Home</li>
-        		<li>About Us</li>
-				<li>Contact Us</li>
-                <?php
-                if($LOGGED_IN){
-echo <<<ZZEOF
-                    <li class="negative">{$_SESSION['name']}</li>
-ZZEOF;
-                } else {
-                    echo '<li class="negative">Log In</li>';
-                }
-                ?>
-			</ul>
-		</nav>
 		<div class="content">
-			Please contact us.
+			About us right here.
 		</div>
 	</div>
 

@@ -50,13 +50,13 @@ $( document ).ready(function() {
     });
 
     // Load about page when "About Us" button is clicked
-    $('#aboutlink').click(function() {
-      $('.content').load('/app/about.html .content');
+    $('nav ul #aboutlink').click(function() {
+      $('.content').load('/app/about.php .content');
     });
 
     // Load contact page when "Contact Us" button is clicked
-    $('#aboutlink').click(function() {
-      $('.content').load('/app/contact.html .content');
+    $('nav ul #contactlink').click(function() {
+      $('.content').load('/app/contact.php .content');
     });
 
     // Close login modal if overlay is clicked
