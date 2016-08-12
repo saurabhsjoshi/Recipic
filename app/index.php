@@ -25,6 +25,7 @@ $LOGGED_IN = isInSession();
   </head>
   <body>
     <div class="overlay">
+      <a id="close" href="#"></a>
       <div class="login">
         <h2>Recipic</h2>
         <form id="signUpForm" method="post" action="signup.php">
@@ -35,29 +36,29 @@ $LOGGED_IN = isInSession();
           <input type="submit"   value="Log In">
         </form>
         <div class="prompt">
-        <span class="signup-prompt">
-          Need an account? <span class="text-link">Sign up!</span>
-        </span>
-        <span class="login-prompt">
-          Already have an account? <span class="text-link">Log In!</span>
-        </span>
-      </div>
+          <span class="signup-prompt">
+            Need an account? <span class="text-link">Sign up!</span>
+          </span>
+          <span class="login-prompt">
+            Already have an account? <span class="text-link">Log In!</span>
+          </span>
+        </div>
       </div>
     </div>
     <div class="container">
 		<nav>
 			<h1 class="logo">Recipic</h1>
 			<ul>
-				<li class="active">Home</li>
-        		<li>About Us</li>
-				<li>Contact Us</li>
+				<li id="homelink" class="active">Home</li>
+        <li id="aboutlink">About Us</li>
+				<li id="contactlink">Contact Us</li>
                 <?php
                 if($LOGGED_IN){
 echo <<<ZZEOF
-                    <li class="negative">{$_SESSION['name']}</li>
+                    <li id="profilelink" class="negative">{$_SESSION['name']}</li>
 ZZEOF;
                 } else {
-                    echo '<li class="negative">Log In</li>';
+                    echo '<li id="loginlink" class="negative">Log In</li>';
                 }
                 ?>
 			</ul>
