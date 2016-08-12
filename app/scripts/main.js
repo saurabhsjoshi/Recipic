@@ -1,12 +1,30 @@
 $( document ).ready(function() {
     let overlayOpen = false;
     let card_index = 1;
+    let signUpForm = $('#signUpForm');
     loadCards();
 
     $('.overlay .login .prompt .text-link').click(function() {
-        $('.hiddenLoginInput').toggle();
-        $('.overlay .login .prompt .login-prompt').toggle();
-        $('.overlay .login .prompt .signup-prompt').toggle();
+      /* TODO: Fix if statements so they work */
+
+      // Toggle username to required on signup form
+      if (signUpForm.find('input[name=name]').prop('required', true)) {
+        signUpForm.find('input[name=name]').prop('required', false);
+      } else {
+        signUpForm.find('input[name=name]').prop('required', true);
+      }
+
+      // Toggle email to required on signup form
+      if (signUpForm.find('input[name=email]').prop('required', true)) {
+        signUpForm.find('input[name=email]').prop('required', false);
+      } else {
+        signUpForm.find('input[name=email]').prop('required', true);
+      }
+      $('.hiddenLoginInput').toggle();
+      $('#loginFormButton').toggle();
+      $('#signupFormButton').toggle();
+      $('.overlay .login .prompt .login-prompt').toggle();
+      $('.overlay .login .prompt .signup-prompt').toggle();
     });
 
     $('#loginlink').click(function() {

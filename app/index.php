@@ -33,7 +33,8 @@ $LOGGED_IN = isInSession();
           <input type="username" name="username" autocomplete="username"         placeholder="Username"  required>
           <input type="email"    name="email"    autocomplete="email"            placeholder="Email"     required class="hiddenLoginInput">
           <input type="password" name="password" autocomplete="current-password" placeholder="Password"  required>
-          <input type="submit"   value="Log In">
+          <input type="submit"   value="Log In"  id="loginFormButton">
+          <input type="submit"   value="Sign Up" id="signupFormButton">
         </form>
         <div class="prompt">
           <span class="signup-prompt">
