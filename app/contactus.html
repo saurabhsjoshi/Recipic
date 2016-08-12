@@ -41,7 +41,16 @@
     </div>
     <div class="container">
 		<div class="content">
-			Please contact us.
+      <div class="contactcard">
+        <h2>Contact Us</h2>
+  			<form class="contactform" method="post">
+  			  <input type="text"  name="name"    autocomplete="name"  placeholder="Name" autofocus required>
+          <input type="email" name="email"   autocomplete="email" placeholder="Email" required>
+          <input type="text"  name="subject" autocomplete="on"    placeholder="Subject" required>
+          <textarea name="message" rows="8" cols="40" placeholder="Message" required></textarea>
+          <input type="submit" value="Submit">
+  			</form>
+      </div>
 		</div>
 	</div>
 
