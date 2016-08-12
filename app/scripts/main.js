@@ -76,6 +76,7 @@ $( document ).ready(function() {
       overlayOpen = false;
     });
 
+    // If open, close overlay on ESC keypressed
     $(document).keyup(function(e) {
       if(e.which == 27 && overlayOpen) {
         $('.overlay').toggle("slow");
