@@ -1,12 +1,15 @@
 $( document ).ready(function() {
+    let overlayOpen = false;
+
     $('.overlay .login .prompt .text-link').click(function() {
         $('.hiddenLoginInput').toggle();
         $('.overlay .login .prompt .login-prompt').toggle();
         $('.overlay .login .prompt .signup-prompt').toggle();
     });
 
-    $('.negative').click(function() {
+    $('#loginlink').click(function() {
       $('.overlay').toggle("slow");
+      overlayOpen = true;
     });
 
     $("#signUpForm").submit(function(event) {
@@ -24,9 +27,8 @@ $( document ).ready(function() {
             encode : true
         })
         .done(function(data) {
-            /* TODO: Show error messages */
             $status = $(data).find('Status').text();
-            
+
             if($status == 400) {
                 //Email already exists
                 console.log($(data).find('Message').text());
@@ -38,12 +40,35 @@ $( document ).ready(function() {
                 //Signed up and logged in
                 location.reload(true);
             }
+        })
+        .fail(function(data) {
+          /* TODO: Specify error messages using if-else statements */
+          alert("error");
         });
 
         event.preventDefault();
     });
 
-    // $('.overlay').click(function() {
-    //   $('.overlay').toggle("slow");
-    // });
+    // Load about page when "About Us" button is clicked
+    $('#aboutlink').click(function() {
+      $('.content').load('/app/about.html .content');
+    });
+
+    // Load contact page when "Contact Us" button is clicked
+    $('#aboutlink').click(function() {
+      $('.content').load('/app/contact.html .content');
+    });
+
+    // Close login modal if overlay is clicked
+    $('#close').click(function () {
+      $('.overlay').toggle("slow");
+      overlayOpen = false;
+    });
+
+    $(document).keyup(function(e) {
+      if(e.which == 27 && overlayOpen) {
+        $('.overlay').toggle("slow");
+        overlayOpen = false;
+      }
+    });
 });
