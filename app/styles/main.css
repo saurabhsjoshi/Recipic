@@ -384,13 +384,22 @@ input.hiddenLoginInput {
 	background-color: #FFF;
 	width: 50%;
 	margin: 0 auto;
-	padding: 3% 5% 2% 5%;
+}
+
+.contactcard form {
+	padding: 3% 5%;
 }
 
 .contactcard h2 {
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-color: #8A0707;
+	border-bottom-width: 3px;
+	color: #8A0707;
 	font-family: 'Roboto', sans-serif;
 	font-size: 3em;
 	font-weight: 300;
-	text-align: left;
-	color: #E84A0C;
+	margin-bottom: 1%;
+	padding: 2% 0;
+	text-align: center;
 }

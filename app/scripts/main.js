@@ -70,6 +70,7 @@ $( document ).ready(function() {
       $('.active').toggleClass("active");
       $('nav ul #homelink').toggleClass("active");
       $('.content').load('index.php .content');
+      loadCards();
     });
 
     // Close login modal if overlay is clicked
@@ -90,11 +91,11 @@ $( document ).ready(function() {
         encode : true
       })
       .done(function(data) {
-        
+
         $(data).find('recipe').each(function(){
           card_index++;
           appendRecipeCard($(this).find('Title').text());
-        }); 
+        });
             })
       .fail(function(data) {
         /* TODO: Specify error messages using if-else statements */
@@ -121,5 +122,3 @@ $( document ).ready(function() {
      }
    });
 });
-
-
