@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     let overlayOpen = false;
-    var card_index = 1;
+    let card_index = 1;
     loadCards();
 
     $('.overlay .login .prompt .text-link').click(function() {
@@ -69,7 +69,8 @@ $( document ).ready(function() {
     $('nav ul #homelink').click(function() {
       $('.active').toggleClass("active");
       $('nav ul #homelink').toggleClass("active");
-      $('.content').load('index.php .content');
+      card_index = 1;
+      $('.content').empty();
       loadCards();
     });
 
