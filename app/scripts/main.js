@@ -51,12 +51,23 @@ $( document ).ready(function() {
 
     // Load about page when "About Us" button is clicked
     $('nav ul #aboutlink').click(function() {
-      $('.content').load('/app/about.php .content');
+      $('.active').toggleClass("active");
+      $('nav ul #aboutlink').toggleClass("active");
+      $('.content').load('aboutus.html .content');
     });
 
     // Load contact page when "Contact Us" button is clicked
     $('nav ul #contactlink').click(function() {
-      $('.content').load('/app/contact.php .content');
+      $('.active').toggleClass("active");
+      $('nav ul #contactlink').toggleClass("active");
+      $('.content').load('contactus.html .content');
+    });
+
+    // Load contact page when "Contact Us" button is clicked
+    $('nav ul #homelink').click(function() {
+      $('.active').toggleClass("active");
+      $('nav ul #homelink').toggleClass("active");
+      $('.content').load('index.php .content');
     });
 
     // Close login modal if overlay is clicked
