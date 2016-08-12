@@ -1,5 +1,7 @@
 $( document ).ready(function() {
     let overlayOpen = false;
+    var card_index = 1;
+    loadCards();
 
     $('.overlay .login .prompt .text-link').click(function() {
         $('.hiddenLoginInput').toggle();
@@ -76,6 +78,35 @@ $( document ).ready(function() {
       overlayOpen = false;
     });
 
+    function loadCards(){
+      var formData = {
+        'id' : card_index
+      };
+      $.ajax({
+        type : 'GET',
+        url : 'test/recipeget.php',
+        data : formData,
+        dataType : 'xml',
+        encode : true
+      })
+      .done(function(data) {
+        
+        $(data).find('recipe').each(function(){
+          card_index++;
+          appendRecipeCard($(this).find('Title').text());
+        }); 
+            })
+      .fail(function(data) {
+        /* TODO: Specify error messages using if-else statements */
+        alert("error");
+      });
+    }
+
+    function appendRecipeCard(recipeName){
+      var card = "<div class=\"card\"><img src=\"http://mikes-table.themulligans.org/wp-content/uploads/2009/01/potato_ricotta_gnocchi-7.jpg\" alt=\"" + recipeName + "\"><span>"+ recipeName + "</span></div>";
+      $('.content').append(card);
+    }
+
     // If open, close overlay on ESC keypressed
     $(document).keyup(function(e) {
       if(e.which == 27 && overlayOpen) {
@@ -83,4 +114,12 @@ $( document ).ready(function() {
         overlayOpen = false;
       }
     });
+
+    $(window).scroll(function() {
+     if($(window).scrollTop() + $(window).height() == $(document).height()) {
+      loadCards();
+     }
+   });
 });
+
+
