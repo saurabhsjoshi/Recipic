@@ -2,5 +2,5 @@
 require_once('lib/session.php');
 initSession();
 exitSession();
-header('location: main.php');
+header('location: index.php');
 ?>
