@@ -402,7 +402,7 @@ input.hiddenLoginInput {
 	padding: 3% 5%;
 }
 
-.contactcard h2, .aboutcard h2 {
+.contactcard > h2, .aboutcard > h2 {
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
 	border-bottom-color: #8A0707;
@@ -411,15 +411,15 @@ input.hiddenLoginInput {
 	font-family: 'Roboto', sans-serif;
 	font-size: 3em;
 	font-weight: 300;
-	margin-bottom: 1%;
-	padding: 2% 0;
+	margin: 2% 1%;
+	padding: 3% 2%;
 	text-align: left;
 }
 
-.contactcard p, .aboutcard p {
+.contactcard > p, .aboutcard > p {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.2em;
 	line-height: 1.4;
 	margin-bottom: 1%;
-	padding: 2% 0;
+	padding: 2%;
 }
