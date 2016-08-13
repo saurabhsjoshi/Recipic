@@ -193,8 +193,39 @@ function saveRecipe($title, $content, $uid) {
 	}
 }
 
-function updateRecipe($title, $content, $uid) {
-	
+function updateRecipe($recipeId, $title, $content) {
+	try{
+		global $db_connection_handle;
+
+		$user_array = array(
+			':title' => $title,
+			':content' => $content,
+			':id' => $recipeId);
+
+		$sql = 'UPDATE recipes SET title=:title, content=:content, dateModified=NOW(), WHERE id=:id';
+		$st = $db_connection_handle->prepare($sql);
+		$st->execute($user_array);
+		return TRUE;
+	} catch(PDOException $e){
+		debug_to_console ('Insert ERROR: '.$e->getMessage()."\n");
+		return FALSE;
+	}
+}
+
+function getAllRecipesByUser($id) {
+	$recipeList = array();
+	try{
+		$user_array = array(':id' => $id);
+		$sql = 'SELECT id, title, content, dateCreated, dateModified FROM recipes WHERE u_id=:id';
+		$st = $db_connection_handle->prepare($sql);
+		$st->execute($user_array);
+		while($result = $st->fetch(PDO::FETCH_ASSOC)){
+			array_push($recipeList, $result);
+		}
+	} catch(PDOException $e) {
+		debug_to_console ('Select ERROR: '.$e->getMessage()."\n");
+	}
+	return $recipeList;
 }
 
 function debug_to_console( $data ) {
