@@ -101,6 +101,7 @@ $( document ).ready(function() {
         });
             })
       .fail(function(data) {
+        console.log(data);
         /* TODO: Specify error messages using if-else statements */
         alert("error");
       });
