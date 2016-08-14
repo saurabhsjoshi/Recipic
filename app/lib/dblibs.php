@@ -215,6 +215,7 @@ function updateRecipe($recipeId, $title, $content) {
 function getAllRecipesByUser($id) {
 	$recipeList = array();
 	try{
+		global $db_connection_handle;
 		$user_array = array(':id' => $id);
 		$sql = 'SELECT id, title, content, dateCreated, dateModified FROM recipes WHERE u_id=:id';
 		$st = $db_connection_handle->prepare($sql);
