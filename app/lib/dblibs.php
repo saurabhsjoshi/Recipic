@@ -124,7 +124,7 @@ function getRecipesFromId($id) {
 		global $db_connection_handle;
 
 		$user_array = array(':id' => $id);
-		$sql = 'SELECT users.name, users.id AS uid, recipes.id, title, content, recipes.dateCreated, dateModified FROM recipes INNER JOIN users ON recipes.u_id = users.id WHERE recipes.id>=:id LIMIT 10';
+		$sql = 'SELECT users.name, users.id AS uid, recipes.id, title, content, recipes.dateCreated, dateModified FROM recipes INNER JOIN users ON recipes.u_id = users.id WHERE recipes.id>=:id LIMIT 30';
 		$st = $db_connection_handle->prepare($sql);
 		$st->execute($user_array);
 		$recipes = fluidxml('Recipes');
@@ -215,6 +215,7 @@ function updateRecipe($recipeId, $title, $content) {
 function getAllRecipesByUser($id) {
 	$recipeList = array();
 	try{
+		global $db_connection_handle;
 		$user_array = array(':id' => $id);
 		$sql = 'SELECT id, title, content, dateCreated, dateModified FROM recipes WHERE u_id=:id';
 		$st = $db_connection_handle->prepare($sql);
