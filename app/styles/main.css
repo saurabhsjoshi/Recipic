@@ -353,8 +353,12 @@ input[type="submit"]:focus {
 	outline: 0;
 }
 
-input.hiddenLoginInput {
+form#signUpForm {
 	display: none;
+}
+
+form#logInForm {
+	display: block;
 }
 
 .prompt{
@@ -375,14 +379,6 @@ input.hiddenLoginInput {
 }
 
 .prompt .login-prompt {
-	display: none;
-}
-
-#loginFormButton {
-	display: block;
-}
-
-#signupFormButton {
 	display: none;
 }
 
