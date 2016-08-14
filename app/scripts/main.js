@@ -1,8 +1,12 @@
 $( document ).ready(function() {
     let overlayOpen = false;
-    let card_index = 1;
-    let signUpForm = $('#signUpForm');
-    loadCards();
+    let card_index  = 1;
+    let signUpForm  = $('#signUpForm');
+    init();
+
+    function init() {
+      loadCards();
+    }
 
     $('.overlay .login .prompt .text-link').click(function() {
       $('#logInForm').toggle();
@@ -19,27 +23,28 @@ $( document ).ready(function() {
     $("#signUpForm").submit(function(event) {
         var formData = {
             'username' : $('input[name=username]').val(),
-            'email' : $('input[name=email').val(),
+            'email'    : $('input[name=email').val(),
             'password' : $('input[name=password]').val(),
-            'name' : $('input[name=name]').val()
+            'name'     : $('input[name=name]').val()
         };
         $.ajax({
-            type : 'POST',
-            url : 'signup.php',
-            data : formData,
+            type     : 'POST',
+            url      : 'signup.php',
+            data     : formData,
             dataType : 'xml',
             encode : true
         })
         .done(function(data) {
             $status = $(data).find('Status').text();
+            $message = $(data).find('Message').text();
 
             if($status == 400) {
                 //Email already exists
-                console.log($(data).find('Message').text());
+                alert($message);
 
             } else if ($status == 401) {
                 //Username already exists
-                console.log($(data).find('Message').text());
+                alert($message);
             } else if ($status = 200) {
                 //Signed up and logged in
                 location.reload(true);
@@ -47,7 +52,7 @@ $( document ).ready(function() {
         })
         .fail(function(data) {
           /* TODO: Specify error messages using if-else statements */
-          alert("error");
+          // alert("error");
         });
 
         event.preventDefault();
@@ -101,9 +106,9 @@ $( document ).ready(function() {
         });
             })
       .fail(function(data) {
-        console.log(data);
+        $('.login').find('.loginError #loginErrorMessage').text(data);
         /* TODO: Specify error messages using if-else statements */
-        alert("error");
+        // alert("error");
       });
     }
 

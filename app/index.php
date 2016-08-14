@@ -28,6 +28,10 @@ $LOGGED_IN = isInSession();
       <a id="close" href="#"></a>
       <div class="login">
         <h2>Recipic</h2>
+        <div class="loginError">
+          <span id="loginErrorMessage"></span>
+          <span id="loginErrorClose">X</span>
+        </div>
         <form id="signUpForm" method="post" action="signup.php">
           <input type="text"     name="name"     autocomplete="name"             placeholder="Full Name" required>
           <input type="username" name="username" autocomplete="username"         placeholder="Username"  required>
