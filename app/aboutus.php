@@ -32,8 +32,8 @@ $LOGGED_IN = isInSession();
             <nav>
                 <h1 class="logo">Recipic</h1>
                 <ul>
-                    <li id="homelink" class="active">Home</li>
-                    <li id="aboutlink">About Us</li>
+                    <li id="homelink">Home</li>
+                    <li id="aboutlink" class="active">About Us</li>
                     <li id="contactlink">Contact Us</li>
                     <?php
                 if($LOGGED_IN){
