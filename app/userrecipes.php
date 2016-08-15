@@ -86,7 +86,7 @@ ZZEOF;
     <!-- endbuild -->
 
     <!-- build:js scrsipts/userrecipe.js -->
-    <!--\script src="scripts/userrecipe.js"></script-->
+    <script src="scripts/userrecipe.js"></script>
     <!-- endbuild -->
   </body>
 </html>

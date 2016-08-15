@@ -25,6 +25,59 @@ function connectToDb() {
 	}
 }
 
+function checkIfUserIsAdmin($userid) {
+	try {
+		global $db_connection_handle;
+		$user_array = array(
+			'id' => $userid);
+		$sql = 'SELECT status FROM users WHERE id=:id';
+		$st = $db_connection_handle->prepare($sql);
+		$st->execute($user_array);
+		$result = $st->fetch(PDO::FETCH_ASSOC);
+		if($result['status'] == 0)
+			return TRUE;
+		else
+			return FALSE;
+	} catch(PDOException $e) {
+		debug_to_console ('Insert ERROR: '.$e->getMessage()."\n");
+		return FALSE;
+	}
+}
+
+function getAllUsers($adminId) {
+	$userList = array();
+	try {
+		global $db_connection_handle;
+
+		$user_array = array(
+			'id' => $adminId
+			);
+		$sql = 'SELECT id, username, status FROM users WHERE id!=:id';
+		$st = $db_connection_handle->prepare($sql);
+		$st->execute($user_array);
+		while($result = $st->fetch(PDO::FETCH_ASSOC)){
+			array_push($userList, $result);
+		}
+	} catch(PDOException $e){}
+	return $userList;
+}
+
+function changeUserPrivilege($uid, $status) {
+	try{
+		global $db_connection_handle;
+		$user_array = array(
+			'id' => $uid,
+			'status' => $status
+			);
+		$sql = 'UPDATE users SET status=:status WHERE id=:id';
+		$st = $db_connection_handle->prepare($sql);
+		$st->execute($user_array);
+		return TRUE;
+	}catch(PDOException $e){
+		return FALSE;
+	}
+}
+
 function signUpUser($username, $password, $email, $name) {
 	try{
 		global $db_connection_handle;
