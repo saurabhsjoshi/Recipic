@@ -37,7 +37,7 @@ $LOGGED_IN = isInSession();
                   if($LOGGED_IN){
   echo <<<ZZEOF
                       <li id="profilelink" class="negative">{$_SESSION['name']} &#9660;</li>
-  ZZEOF;
+ZZEOF;
                   } else {
                       echo '<li id="loginlink" class="negative">Log In</li>';
                   }
