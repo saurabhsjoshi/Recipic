@@ -91,6 +91,15 @@ nav ul> li.negative:hover {
     background-color: #212121;
     color: #FFB000;
 }
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    display: inline-block;
+}
+
 nav .logo {
     user-select: none;
     -moz-user-select: none;
@@ -130,7 +139,6 @@ nav .logo {
     -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
        -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    background-color: #ff4060;
 }
 
 .fab:active {
@@ -275,7 +283,6 @@ h1, h2, h3 {
     z-index: 12;
     border-radius: 3px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    display: inline-block;
     margin: 0 auto;
     height: auto;
     padding: 3em 2em 2em 2em;
@@ -426,4 +433,40 @@ form#logInForm {
     line-height: 1.4;
     margin-bottom: 1%;
     padding: 2%;
+}
+
+.userRecipeList {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.userRecipeList tr {
+    padding: 0.25em 1em;
+}
+
+.userRecipeList tr td{
+    padding: 0.25em 1em;
+    text-align: center;
+}
+
+.userRecipeList thead {
+    background-color: #FAFAFA;
+    color: #212121;
+    border-radius: 3px;
+}
+
+.userRecipeList thead tr th{
+    padding: 0.25em 1em;
+    text-align: center;
+}
+
+.userRecipeList button {
+    padding: 0 0.5em;
+    
+}
+
+.tablecard {
+    border-radius: 3px;
+    background-color: #FFF;
+    width: 80%;
 }

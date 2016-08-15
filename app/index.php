@@ -28,7 +28,7 @@ $LOGGED_IN = isInSession();
     <body>
         <div class="overlay">
             <a id="close" href="#"></a>
-            <div class="login">
+            <div class="hidden login">
                 <h2>Recipic</h2>
                 <div class="loginError">
                     <span id="loginErrorMessage"></span>
@@ -55,6 +55,9 @@ $LOGGED_IN = isInSession();
                     </span>
                 </div>
             </div>
+            <div class="hidden addRecipe">
+                
+            </div>
         </div>
         <div class="container">
             <nav>
@@ -66,11 +69,11 @@ $LOGGED_IN = isInSession();
                     <?php
                 if($LOGGED_IN){
 echo <<<ZZEOF
-                    <li id="profilelink" class="negative">{$_SESSION['name']} &#9660;</li>
+                    <li id="profilelink" class="negative">{$_SESSION['name']}</li>
                     </ul>
                     <div class="fab-box">
-                <button class="fab dark-fab">+</button>
-                <button class="fab red-fab">
+                <button id="addRecipeButton" class="fab dark-fab">+</button>
+                <button class="fab red-fab" onclick="window.location.href='logout.php'">
                     <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="1em" height="1em" viewBox="-0.8 -0.5 177 202" xml:space="preserve">
                         <defs>
                         </defs>
@@ -88,7 +91,7 @@ ZZEOF;
                 ?>
             </nav>
             <div class="content">
-                <table>
+                <table class="tableCard userRecipeList">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -96,24 +99,26 @@ ZZEOF;
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tr>
-                        <td>1</td>
-                        <td>Amazing pasta</td>
-                        <td>
-                            <button>View</button>
-                            <button>Modify</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Not so good food</td>
-                        <td>
-                            <button>View</button>
-                            <button>Modify</button>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Amazing pasta</td>
+                            <td>
+                                <button>View</button>
+                                <button>Modify</button>
+                                <button>Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Not so good food</td>
+                            <td>
+                                <button>View</button>
+                                <button>Modify</button>
+                                <button>Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
 

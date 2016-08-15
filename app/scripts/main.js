@@ -14,6 +14,21 @@ $(document).ready(function () {
     });
 
     $('#loginlink').click(function () {
+        if ($('.overlay .login').is('.hidden')) {
+            $('.overlay .login').removeClass("hidden");
+            $('.overlay .login').addClass("shown");
+            $('.overlay .addRecipe').addClass("hidden");
+        }
+        $('.overlay').toggle("slow");
+        overlayOpen = true;
+    });
+
+    $('#addRecipeButton').click(function () {
+        if ($('.overlay .addRecipe').is('.hidden')) {
+            $('.overlay .addRecipe').removeClass("hidden");
+            $('.overlay .addRecipe').addClass("shown");
+            $('.overlay .login').addClass("hidden");
+        }
         $('.overlay').toggle("slow");
         overlayOpen = true;
     });
@@ -84,6 +99,14 @@ $(document).ready(function () {
 
     // Close login modal if overlay is clicked
     $('#close').click(function () {
+        if ($('.overlay .login').is('.shown')) {
+            $('.overlay .login').removeClass("shown");
+            $('.overlay .login').addClass("hidden"); 
+        }
+        if ($('.overlay .addRecipe').is('.shown')) {
+            $('.overlay .addRecipe').removeClass("shown");
+            $('.overlay .addRecipe').addClass("hidden"); 
+        }
         $('.overlay').toggle("slow");
         overlayOpen = false;
     });
