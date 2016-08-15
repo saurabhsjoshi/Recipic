@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Recipic</title>
+    <title>Recipic: About Us</title>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
@@ -20,26 +20,25 @@
   </head>
   <body>
     <div class="overlay">
-      <div class="login">
-        <h2>Recipic</h2>
-        <form id="signUpForm" method="post" action="signup.php">
-          <input type="text"     name="name"     autocomplete="name"             placeholder="Full Name" class="hiddenLoginInput">
-          <input type="username" name="username" autocomplete="username"         placeholder="Username"  required>
-          <input type="email"    name="email"    autocomplete="email"            placeholder="Email"     required class="hiddenLoginInput">
-          <input type="password" name="password" autocomplete="current-password" placeholder="Password"  required>
-          <input type="submit"   value="Log In">
-        </form>
-        <div class="prompt">
-        <span class="signup-prompt">
-          Need an account? <span class="text-link">Sign up!</span>
-        </span>
-        <span class="login-prompt">
-          Already have an account? <span class="text-link">Log In!</span>
-        </span>
-      </div>
-      </div>
     </div>
     <div class="container">
+      <nav>
+  			<h1 class="logo">Recipic</h1>
+  			<ul>
+  				<li id="homelink" class="active">Home</li>
+          <li id="aboutlink">About Us</li>
+  				<li id="contactlink">Contact Us</li>
+                  <?php
+                  if($LOGGED_IN){
+  echo <<<ZZEOF
+                      <li id="profilelink" class="negative">{$_SESSION['name']} &#9660;</li>
+  ZZEOF;
+                  } else {
+                      echo '<li id="loginlink" class="negative">Log In</li>';
+                  }
+                  ?>
+  			</ul>
+  		</nav>
 		<div class="content">
 			<div class="aboutcard">
         <h2>About Us</h2>
