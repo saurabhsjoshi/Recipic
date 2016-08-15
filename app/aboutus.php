@@ -1,5 +1,10 @@
+<?php
+require('lib/session.php');
+initSession();
+$LOGGED_IN = isInSession();
+?>
 <!doctype html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -60,3 +65,4 @@
     <!-- endbuild -->
   </body>
 </html>
+<?php ?>

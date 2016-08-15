@@ -1,30 +1,24 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // Load static parts
     $('.overlay').load('overlay.html');
 
     //Variables
-    let overlayOpen = false;
-    let card_index = 1;
-    let signUpForm = $('#signUpForm');
-    init();
+    var overlayOpen = false,
+        signUpForm = $('#signUpForm');
 
-    function init() {
-        loadCards();
-    }
-
-    $('.overlay .login .prompt .text-link').click(function() {
+    $('.overlay .login .prompt .text-link').click(function () {
         $('#logInForm').toggle();
         $('#signUpForm').toggle();
         $('.overlay .login .prompt .login-prompt').toggle();
         $('.overlay .login .prompt .signup-prompt').toggle();
     });
 
-    $('#loginlink').click(function() {
+    $('#loginlink').click(function () {
         $('.overlay').toggle("slow");
         overlayOpen = true;
     });
 
-    $("#signUpForm").submit(function(event) {
+    $("#signUpForm").submit(function (event) {
         event.preventDefault();
         var formData = {
             'username': $('input[name=username]').val(),
@@ -39,7 +33,7 @@ $(document).ready(function() {
                 dataType: 'xml',
                 encode: true
             })
-            .done(function(data) {
+            .done(function (data) {
                 $status = $(data).find('Status').text();
                 $message = $(data).find('Message').text();
 
@@ -62,7 +56,7 @@ $(document).ready(function() {
                     location.reload(true);
                 }
             })
-            .fail(function(data) {
+            .fail(function (data) {
                 $status = $(data).find('Status').text();
                 $message = $(data).find('Message').text();
                 $('.login').find('.loginError #loginErrorMessage').text(`$message ($status)`);
@@ -74,69 +68,39 @@ $(document).ready(function() {
     });
 
     // Load about page when "About Us" button is clicked
-    $('nav ul #aboutlink').click(function() {
+    $('nav ul #aboutlink').click(function () {
         window.location.href = 'aboutus.php';
     });
 
     // Load contact page when "Contact Us" button is clicked
-    $('nav ul #contactlink').click(function() {
+    $('nav ul #contactlink').click(function () {
         window.location.href = 'contactus.php';
     });
 
     // Load contact page when "Contact Us" button is clicked
-    $('nav ul #homelink').click(function() {
+    $('nav ul #homelink').click(function () {
         window.location.href = 'index.php';
     });
 
     // Close login modal if overlay is clicked
-    $('#close').click(function() {
+    $('#close').click(function () {
         $('.overlay').toggle("slow");
         overlayOpen = false;
     });
 
-    function loadCards() {
-        var formData = {
-            'id': card_index
-        };
-        $.ajax({
-                type: 'GET',
-                url: 'test/recipeget.php',
-                data: formData,
-                dataType: 'xml',
-                encode: true
-            })
-            .done(function(data) {
-
-                $(data).find('recipe').each(function() {
-                    card_index++;
-                    appendRecipeCard($(this).find('Title').text());
-                });
-            })
-            .fail(function(data) {
-                alert("Error parsing recipes");
-                /* TODO: Specify error messages using if-else statements */
-                // alert("error");
-            });
-    }
-
-    function appendRecipeCard(recipeName) {
-        var card = "<div class=\"card\"><img src=\"http://mikes-table.themulligans.org/wp-content/uploads/2009/01/potato_ricotta_gnocchi-7.jpg\" alt=\"" + recipeName + "\"><span>" + recipeName + "</span></div>";
-        $('.content').append(card);
-    }
-
-    $('#loginErrorClose').click(function() {
+    $('#loginErrorClose').click(function () {
         $('.loginError').toggle();
     });
 
     // If open, close overlay on ESC keypressed
-    $(document).keyup(function(e) {
+    $(document).keyup(function (e) {
         if (e.which == 27 && overlayOpen) {
             $('.overlay').toggle("slow");
             overlayOpen = false;
         }
     });
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(window).scrollTop() + $(window).height() == $(document).height()) {
             loadCards();
         }
