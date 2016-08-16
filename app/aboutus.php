@@ -65,6 +65,9 @@ ZZEOF;
                     <p>
                         The new age digital handbook for the aspiring chef. Featuring recipes that range from beginner level to expert level, Recipic is the one stop destination for all your culinary combination needs.
                     </p>
+                    <p>
+                        Why settle for a bland packaged meal when you can make a simple one out of the stuff that you have left in your fridge? Have a lot of leftovers, we have something with that too. The solution to a hearty homecooked meal is now at your fingertips!
+                    </p>
                 </div>
             </div>
         </div>
