@@ -100,12 +100,12 @@ $(document).ready(function () {
     // Close login modal if overlay is clicked
     $('#close').click(function () {
         if ($('.overlay .login').is('.shown')) {
-            $('.overlay .login').removeClass("shown");
             $('.overlay .login').addClass("hidden"); 
+            $('.overlay .login').removeClass("shown");
         }
         if ($('.overlay .addRecipe').is('.shown')) {
-            $('.overlay .addRecipe').removeClass("shown");
             $('.overlay .addRecipe').addClass("hidden"); 
+            $('.overlay .addRecipe').removeClass("shown");
         }
         $('.overlay').toggle("slow");
         overlayOpen = false;
