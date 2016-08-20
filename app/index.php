@@ -56,7 +56,7 @@ $LOGGED_IN = isInSession();
                 </div>
             </div>
             <div class="hidden addRecipe">
-                
+
             </div>
         </div>
         <div class="container">
@@ -83,7 +83,7 @@ echo <<<ZZEOF
                     </svg>
                 </button>
             </div>
-                    </div>                    
+                    </div>
 ZZEOF;
                 } else {
                     echo '<li id="loginlink" class="negative">Log In</li></ul>';
@@ -92,14 +92,11 @@ ZZEOF;
             </nav>
             <div class="content">
                 <table class="tableCard userRecipeList">
-                    <thead>
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
                             <th>Actions</th>
                         </tr>
-                    </thead>
-                    <tbody>
                         <tr>
                             <td>1</td>
                             <td>Amazing pasta</td>
@@ -118,7 +115,6 @@ ZZEOF;
                                 <button>Delete</button>
                             </td>
                         </tr>
-                    </tbody>
                 </table>
             </div>
 
