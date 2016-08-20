@@ -91,7 +91,7 @@ ZZEOF;
                 ?>
             </nav>
             <div class="content">
-                <table class="tableCard userRecipeList">
+                <table>
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
@@ -102,8 +102,8 @@ ZZEOF;
                             <td>Amazing pasta</td>
                             <td>
                                 <button>View</button>
-                                <button>Edit</button>
-                                <button>Delete</button>
+                                <button class="editRecipeButton">Edit</button>
+                                <button class="deleteRecipeButton">Delete</button>
                             </td>
                         </tr>
                         <tr>
@@ -111,8 +111,8 @@ ZZEOF;
                             <td>Not so good food</td>
                             <td>
                                 <button>View</button>
-                                <button>Edit</button>
-                                <button>Delete</button>
+                                <button class="editRecipeButton">Edit</button>
+                                <button class="deleteRecipeButton">Delete</button>
                             </td>
                         </tr>
                 </table>
