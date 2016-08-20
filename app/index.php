@@ -102,7 +102,7 @@ ZZEOF;
                             <td>Amazing pasta</td>
                             <td>
                                 <button>View</button>
-                                <button>Modify</button>
+                                <button>Edit</button>
                                 <button>Delete</button>
                             </td>
                         </tr>
@@ -111,7 +111,7 @@ ZZEOF;
                             <td>Not so good food</td>
                             <td>
                                 <button>View</button>
-                                <button>Modify</button>
+                                <button>Edit</button>
                                 <button>Delete</button>
                             </td>
                         </tr>

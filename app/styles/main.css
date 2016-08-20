@@ -476,7 +476,7 @@ table tr td:nth-child(3), table tr th:nth-child(3) {
   width: 30%;
 }
 table tr td:nth-child(3) button {
-  background-color: #AAA;
+  background-color: #FFB000;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: #FFF;
@@ -485,6 +485,10 @@ table tr td:nth-child(3) button {
   width: inherit;
   border: 0;
   border-radius: 5px;
+  transition: all 0.4s;
+}
+table tr td:nth-child(3) button:hover {
+  box-shadow: rgba(0, 0, 0, 0.156863) 0px 3px 6px, rgba(0, 0, 0, 0.227451) 0px 3px 6px;
 }
 table tr td:nth-child(3) button:first-of-type {
   background: #212121;
