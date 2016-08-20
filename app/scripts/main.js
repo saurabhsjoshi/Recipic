@@ -15,8 +15,8 @@ $(document).ready(function () {
 
     $('#loginlink').click(function () {
         if ($('.overlay .login').is('.hidden')) {
+          $('.overlay .login').addClass("shown");
             $('.overlay .login').removeClass("hidden");
-            $('.overlay .login').addClass("shown");
             $('.overlay .addRecipe').addClass("hidden");
         }
         $('.overlay').toggle("slow");
@@ -25,8 +25,8 @@ $(document).ready(function () {
 
     $('#addRecipeButton').click(function () {
         if ($('.overlay .addRecipe').is('.hidden')) {
+          $('.overlay .addRecipe').addClass("shown");
             $('.overlay .addRecipe').removeClass("hidden");
-            $('.overlay .addRecipe').addClass("shown");
             $('.overlay .login').addClass("hidden");
         }
         $('.overlay').toggle("slow");
@@ -100,11 +100,11 @@ $(document).ready(function () {
     // Close login modal if overlay is clicked
     $('#close').click(function () {
         if ($('.overlay .login').is('.shown')) {
-            $('.overlay .login').addClass("hidden"); 
+            $('.overlay .login').addClass("hidden");
             $('.overlay .login').removeClass("shown");
         }
         if ($('.overlay .addRecipe').is('.shown')) {
-            $('.overlay .addRecipe').addClass("hidden"); 
+            $('.overlay .addRecipe').addClass("hidden");
             $('.overlay .addRecipe').removeClass("shown");
         }
         $('.overlay').toggle("slow");
@@ -113,6 +113,10 @@ $(document).ready(function () {
 
     $('#loginErrorClose').click(function () {
         $('.loginError').toggle();
+    });
+
+    $('#adminLogin').click(function () {
+      window.location.href="adminloginpage.php";
     });
 
     // If open, close overlay on ESC keypressed

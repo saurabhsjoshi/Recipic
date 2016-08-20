@@ -143,7 +143,7 @@ nav .logo {
     width: 2em;
     height: 2em;
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -244,7 +244,7 @@ nav .logo {
 }
 .card:active span {
     -webkit-filter: opacity(0%);
-            filter: opacity(0%);
+    filter: opacity(0%);
 }
 body {
     background-color: #FAFAFA;
@@ -299,7 +299,7 @@ h1, h2, h3 {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 .login h2 {
     user-select: none;
@@ -453,63 +453,64 @@ table {
     z-index: 4;
 }
 table tr {
-  margin: 1%;
-  background-color: #FFF;
-  color: #212121;
-  padding: 1em 2em;
-  line-height: 2.5;
-  -moz-text-align-last: center;
-       text-align-last: center;
+    margin: 1%;
+    background-color: #FFF;
+    color: #212121;
+    padding: 1em 2em;
+    line-height: 2.5;
+    -moz-text-align-last: center;
+    text-align-last: center;
 }
 table tr:nth-child(odd) {
-  background-color: #F0F0F0;
+    background-color: #F0F0F0;
 }
 table tr td:nth-child(1), table tr th:nth-child(1) {
-  max-width: 10%;
+    max-width: 10%;
 }
 table tr td:nth-child(2), table tr th:nth-child(2) {
-  -moz-text-align-last: left;
-       text-align-last: left;
-  min-width: 60%;
+    -moz-text-align-last: left;
+    text-align-last: left;
+    min-width: 60%;
 }
 table tr td:nth-child(3), table tr th:nth-child(3) {
-  width: 30%;
+    width: 30%;
 }
 table tr td:nth-child(3) button {
-  background-color: #212121;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #FFF;
-  cursor: pointer;
-  line-height: 2.4;
-  width: inherit;
-  border: 0;
-  border-radius: 5px;
-  transition: all 0.4s;
+    background-color: #212121;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFF;
+    cursor: pointer;
+    line-height: 2.4;
+    width: inherit;
+    border: 0;
+    border-radius: 5px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
 }
 table tr td:nth-child(3) button:hover {
-  box-shadow: rgba(0, 0, 0, 0.156863) 0px 3px 6px, rgba(0, 0, 0, 0.227451) 0px 3px 6px;
+    box-shadow: rgba(0, 0, 0, 0.156863) 0px 3px 6px, rgba(0, 0, 0, 0.227451) 0px 3px 6px;
 }
 table tr td button.editRecipeButton {
-  background: #FFB000;
+    background: #FFB000;
 }
 table tr td button.deleteRecipeButton {
-  background-color: #8A0707;
+    background-color: #8A0707;
 }
 table tr td:nth-child(3) button:active {
-  outline: 0;
+    outline: 0;
 }
 table tr td:nth-child(3) button:focus {
-  outline: 0;
+    outline: 0;
 }
 table tr:first-of-type {
-  background: -webkit-linear-gradient(#555, #212121);
-  background: linear-gradient(#555, #212121);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  color: #FFF;
+    background: -webkit-linear-gradient(#555, #212121);
+    background: linear-gradient(#555, #212121);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #FFF;
 }
 table tr:last-of-type {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }

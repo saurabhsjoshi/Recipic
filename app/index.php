@@ -1,5 +1,6 @@
 <?php
 require('lib/session.php');
+require('lib/dblibs.php');
 initSession();
 $LOGGED_IN = isInSession();
 ?>
@@ -55,9 +56,6 @@ $LOGGED_IN = isInSession();
                     </span>
                 </div>
             </div>
-            <div class="hidden addRecipe">
-
-            </div>
         </div>
         <div class="container">
             <nav>
@@ -69,7 +67,12 @@ $LOGGED_IN = isInSession();
                     <?php
                 if($LOGGED_IN){
 echo <<<ZZEOF
-                    <li id="profilelink" class="negative">{$_SESSION['name']}</li>
+                    <li id="profilelink" class="negative">{$_SESSION["name"]}</li>
+ZZEOF;
+                    if($LOGGED_IN && connectToDb() && checkIfUserIsAdmin($_SESSION["userId"])) {
+                      echo '<li class="negative" id="adminLogin">Admin Panel</li>';
+                    }
+echo <<<ZZEOF
                     </ul>
                     <div class="fab-box">
                 <button id="addRecipeButton" class="fab dark-fab">+</button>
@@ -91,31 +94,6 @@ ZZEOF;
                 ?>
             </nav>
             <div class="content">
-                <table>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Actions</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Amazing pasta</td>
-                            <td>
-                                <button>View</button>
-                                <button class="editRecipeButton">Edit</button>
-                                <button class="deleteRecipeButton">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Not so good food</td>
-                            <td>
-                                <button>View</button>
-                                <button class="editRecipeButton">Edit</button>
-                                <button class="deleteRecipeButton">Delete</button>
-                            </td>
-                        </tr>
-                </table>
             </div>
 
             <!-- build:js scripts/vendor.js -->
